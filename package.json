@@ -1,0 +1,23 @@
+{
+  "name": "react-candies",
+  "version": "0.0.1",
+  "description": "Useful React component making your life easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chkal/react-candies.git"
+  },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "author": "Christian Kaltepoth <christian@kaltepoth.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chkal/react-candies/issues"
+  },
+  "homepage": "https://github.com/chkal/react-candies#readme"
+}
