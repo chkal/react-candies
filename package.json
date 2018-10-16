@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "description": "Useful React component making your life easier",
   "main": "index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
+  "files": [
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chkal/react-candies.git"
@@ -19,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/chkal/react-candies/issues"
   },
-  "homepage": "https://github.com/chkal/react-candies#readme"
+  "homepage": "https://github.com/chkal/react-candies#readme",
+  "devDependencies": {
+    "@types/react": "^16.4.17",
+    "react": "^16.5.2",
+    "typescript": "^3.1.3"
+  }
 }
