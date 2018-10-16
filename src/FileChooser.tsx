@@ -1,16 +1,16 @@
 import * as React from "react";
 
-export type Args = {
+type Args = {
   open: () => void;
   processing: boolean;
 };
 
-export type Props = {
+type Props = {
   onSelected: ( files: File[] ) => Promise<any> | undefined;
   children: ( args: Args ) => React.ReactNode;
 }
 
-export type State = {
+type State = {
   processing: boolean;
 }
 
