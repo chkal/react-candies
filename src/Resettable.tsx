@@ -5,7 +5,6 @@ type Args = {
 };
 
 type Props = {
-  onSelected: ( files: File[] ) => Promise<any> | undefined;
   children: ( args: Args ) => React.ReactNode;
 }
 
