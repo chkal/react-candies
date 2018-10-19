@@ -16,12 +16,25 @@ Or with Yarn:
 
 ### If
 
-Conditionally renders the child components:
+Conditionally renders the child components. If you don't want to handle the *else*-case, you can use the
+simple form:
 
 ```typescript jsx
-<If condition={!window.navigator.geolocation}>
-  Sorry, the Geolocation API is not supported.
+<If condition={new Date().getDay() === 0}>
+  <span>It's Sunday!</span>
 </If>
+```
+
+But you can also use the full form, which allows you to specify the *then* and *else* blocks.
+
+```typescript jsx
+<If condition={new Date().getDay() === 0}
+    then={
+      <span>It's Sunday!</span>
+    }
+    else={
+      <span>It's not Sunday! Go back to work!</span>
+    }/>
 ```
 
 ### FileChooser
