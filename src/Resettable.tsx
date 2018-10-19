@@ -1,11 +1,7 @@
 import * as React from "react";
 
-type Args = {
-  reset: () => void;
-};
-
 type Props = {
-  children: ( args: Args ) => React.ReactNode;
+  children: ( reset: () => void ) => React.ReactNode;
 }
 
 type State = {
@@ -26,13 +22,9 @@ export class Resettable extends React.Component<Props, State> {
 
   render(): JSX.Element | null | false {
 
-    const args: Args = {
-      reset: this.reset
-    };
-
     return (
       <React.Fragment key={this.state.seq}>
-        {this.props.children( args )}
+        {this.props.children( this.reset )}
       </React.Fragment>
     );
 
