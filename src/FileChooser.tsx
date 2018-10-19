@@ -6,7 +6,8 @@ type Args = {
 };
 
 type Props = {
-  onSelected: ( files: File[] ) => Promise<any> | undefined;
+  onSelected: ( files: File[] ) => Promise<any> | void;
+  multiple?: boolean;
   children: ( args: Args ) => React.ReactNode;
 }
 
@@ -15,6 +16,10 @@ type State = {
 }
 
 export class FileChooser extends React.Component<Props, State> {
+
+  static defaultProps = {
+    multiple: false
+  };
 
   state = {
     processing: false
@@ -64,6 +69,7 @@ export class FileChooser extends React.Component<Props, State> {
     return (
       <>
         <input type="file"
+               multiple={this.props.multiple}
                ref={this.inputRef}
                onChange={e => this.onChange( e )}
                style={{ display: "none" }}/>
