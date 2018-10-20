@@ -2,7 +2,7 @@ import * as React from "react";
 
 type Props = {
   active?: boolean;
-  interval?: number;
+  interval: number;
   onPoll: () => void;
 }
 
@@ -11,21 +11,25 @@ type State = {}
 export class Poll extends React.Component<Props, State> {
 
   static defaultProps = {
-    active: true,
-    interval: 1000
+    active: true
   };
 
   timerId: number = -1;
 
   componentDidMount(): void {
-    this.timerId = setInterval( this.handleTick, this.props.interval );
+    this.scheduleNextTick();
   }
 
   componentWillUnmount(): void {
-    clearInterval( this.timerId );
+    clearTimeout( this.timerId );
   }
 
+  scheduleNextTick = () => {
+    this.timerId = setTimeout( this.handleTick, this.props.interval );
+  };
+
   handleTick = () => {
+    this.scheduleNextTick();
     if( this.props.active ) {
       this.props.onPoll();
     }
