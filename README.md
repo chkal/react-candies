@@ -85,3 +85,18 @@ to the render prop.
   )}
 </Resettable>
 ```
+
+### OnlineStatus
+
+This component detects whether the browser is online. This can be useful to warn
+the user if the connection was lost.
+
+```jsx
+<OnlineStatus>
+  {online => (
+    <div>
+      {online ? "You are online!" : "You are offline!"}
+    </div>
+  )}
+</OnlineStatus>
+```
