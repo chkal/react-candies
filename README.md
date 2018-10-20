@@ -100,3 +100,35 @@ the user if the connection was lost.
   )}
 </OnlineStatus>
 ```
+
+### WindowSize
+
+This component allows to access and track change of the current window size. There are different ways
+to use this component.
+
+You can set the `onResize` prop to get notified in case of changes:
+
+```jsx
+<WindowSize onResize={( w, h ) => console.log( `width=${w}, height=${h}` )}/>
+```
+
+As `resize` events are fired VERY often, the component automatically debounces them with a delay
+of 100ms. You can change this value if you like:
+
+```jsx
+<WindowSize onResize={( w, h ) => console.log( `width=${w}, height=${h}` )}
+            delay={500} />
+```
+
+If you just need the width or height for doing layout, you can also use a render prop to access the
+current values:
+
+```jsx
+<WindowSize>
+  {( width, height ) => (
+    <div>
+      {width} x {height}
+    </div>
+  )}
+</WindowSize>
+```
