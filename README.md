@@ -132,3 +132,20 @@ current values:
   )}
 </WindowSize>
 ```
+
+### Poll
+
+This component provides a simple way to perform polling based on some interval.
+
+```jsx
+<Poll interval={1000} 
+      onPoll={() => console.log( "Ping" )}/>
+```
+
+You can dynamically enable/disable the polling using the `active` prop:
+
+```jsx
+<Poll interval={1000}
+      active={this.state.updateStatus} 
+      onPoll={() => this.fetchStatus()}/>
+```
