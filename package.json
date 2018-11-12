@@ -1,6 +1,6 @@
 {
   "name": "react-candies",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Useful React component making your life easier",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
